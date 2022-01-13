@@ -16,11 +16,14 @@ function createGrid(pixelRatio) {
     }
     let numOfPixel = pixelRatio * pixelRatio;
     for (let i = 0; i < numOfPixel; i++) {
-        const div = document.createElement("div");
-        div.classList.add("pixel");
-        div.style.width = `${100 / pixelRatio}%`;
-        div.style.height = `${100/ pixelRatio}%`;
-        grid.appendChild(div);
+        const pixel = document.createElement("div");
+        pixel.classList.add("pixel");
+        pixel.style.width = `${100 / pixelRatio}%`;
+        pixel.style.height = `${100/ pixelRatio}%`;
+        pixel.addEventListener("mousemove", (e) => {
+            e.target.classList.add("pixel-draw");
+        })
+        grid.appendChild(pixel);
     }
 }
 
@@ -28,5 +31,6 @@ createGrid(slider.value);
 changeRatio.addEventListener("click", () => {
     createGrid(slider.value);
 })
+
 
 
