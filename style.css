@@ -6,7 +6,7 @@ body {
 }
 
 #viewport {
-    height: 105vh;
+    min-height: 105vh;
     background-color: #46243a;
     color: #f5f3f5;
     display: flex;
@@ -60,7 +60,12 @@ body {
     border: solid 1px #f5f3f5;
 }
 
-.pixel-draw {
+.pixel-eraser:hover {
+    background-color: #f5f3f5;
+    border: solid 1px #46243a;
+}
+
+.pixel-draw-black {
     background-color: #46243a;
     border: solid 1px #f5f3f5;
 }
